@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Constructora Ecologías</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Constructora Ecologías — Constructora e inversionista colombiana con sede en Bogotá. Proyectos industriales, residenciales y turísticos.">
+<style>
+body{margin:0}
+@font-face{font-family:"Archivo";src:url(fonts/archivo-latin-wdth-normal.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+@font-face{font-family:"IBM Plex Sans";src:url(fonts/ibm-plex-sans-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"IBM Plex Sans";src:url(fonts/ibm-plex-sans-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"IBM Plex Sans";src:url(fonts/ibm-plex-sans-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"IBM Plex Mono";src:url(fonts/ibm-plex-mono-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"IBM Plex Mono";src:url(fonts/ibm-plex-mono-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+/* Layout: structural-drawing sheet — title block hero with a site elevation, then numbered sheets and a project gallery */
+:root{
+  --paper:#eef0ec; --sheet:#f8f9f6; --ink:#17251f; --muted:#56635c;
+  --line:#c9cfc8; --green:#1f5c3f; --steel:#b5541c; --grid:rgba(31,92,63,.07);
+  --band:#1f5c3f; --onband:#f3f7f4;
+  --display:"Archivo","PingFang SC","Microsoft YaHei","Noto Sans SC",Arial Narrow,sans-serif;
+  --body:"IBM Plex Sans","PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  --mono:"IBM Plex Mono","PingFang SC","Microsoft YaHei","Noto Sans SC",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#101713; --sheet:#16201b; --ink:#e6ece7; --muted:#9aa89f;
+  --line:#2c3a33; --green:#6fc597; --steel:#e58a4f; --grid:rgba(111,197,151,.06); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#101713; --sheet:#16201b; --ink:#e6ece7; --muted:#9aa89f;
+  --line:#2c3a33; --green:#6fc597; --steel:#e58a4f; --grid:rgba(111,197,151,.06); color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:24px 24px}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px}
+.brand{font-family:var(--display);font-weight:800;font-stretch:80%;font-size:20px;letter-spacing:.01em;display:flex;align-items:center;gap:10px}
+.brand b{display:inline-grid;place-items:center;width:30px;height:30px;background:var(--green);color:var(--sheet);font-size:18px}
+.langs{display:flex;border:1px solid var(--line)}
+.langs button{font:500 13px var(--mono);background:none;border:0;color:var(--muted);padding:6px 10px;cursor:pointer}
+.langs button[aria-pressed="true"]{background:var(--ink);color:var(--sheet)}
+.langs button:focus-visible,a:focus-visible{outline:2px solid var(--steel);outline-offset:2px}
+
+.hero{padding-block:48px 32px;display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center}
+.hero>*{min-width:0}
+.eyebrow{font:500 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--steel)}
+h1{font-family:var(--display);font-weight:800;font-stretch:72%;font-size:clamp(48px,8vw,96px);line-height:.92;margin:14px 0 18px;text-wrap:balance;letter-spacing:-.01em}
+h1 em{font-style:normal;color:var(--green)}
+.lede{font-size:18px;color:var(--muted);max-width:52ch;margin:0}
+.fair{margin-top:24px;display:inline-flex;gap:14px;align-items:center;border:1px solid var(--ink);padding:10px 14px;font:500 13px var(--mono);background:var(--sheet)}
+.fair span:first-child{color:var(--steel)}
+.stats{margin:28px 0 0;display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:0;border-top:1px solid var(--line)}
+.stats>div{padding:14px 22px 0 0;min-width:0}
+.stats>div+div{padding-left:22px;border-left:1px solid var(--line)}
+.stats dt{font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--steel)}
+.stats dd{margin:4px 0 0;font-family:var(--display);font-weight:800;font-stretch:75%;font-size:clamp(28px,4vw,40px);line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap}
+.stats small{font-size:.5em;font-stretch:90%;color:var(--muted);font-weight:500}
+@media (max-width:520px){.stats{grid-template-columns:1fr}.stats>div,.stats>div+div{padding:12px 0;border-left:0}.stats>div+div{border-top:1px solid var(--line)}}
+.drawing{background:var(--sheet);border:1px solid var(--line);padding:16px;margin:0}
+.heroimg{display:block;width:100%;max-width:100%;aspect-ratio:16/10;object-fit:cover}
+figcaption{display:flex;justify-content:space-between;gap:8px;border-top:1px solid var(--line);margin-top:10px;padding-top:8px;font:12px var(--mono);color:var(--muted);flex-wrap:wrap}
+
+section.sheet{padding-block:48px;border-top:1px solid var(--line)}
+.sh{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:28px}
+.sh .no{font:500 13px var(--mono);color:var(--steel)}
+h2{font-family:var(--display);font-weight:800;font-stretch:78%;font-size:clamp(30px,4.5vw,46px);line-height:1;margin:0;text-wrap:balance}
+.intro{max-width:64ch;color:var(--muted);margin:-12px 0 28px;font-size:17px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--sheet);border:1px solid var(--line);padding:24px;display:grid;gap:10px;align-content:start}
+.card h3{font-family:var(--display);font-weight:800;font-stretch:85%;font-size:24px;margin:0;line-height:1.1}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.tag{font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
+
+.feature{display:grid;grid-template-columns:1.5fr 1fr;gap:0;border:1px solid var(--line);background:var(--sheet)}
+.feature>*{min-width:0}
+.feature img{display:block;width:100%;height:100%;min-height:280px;object-fit:cover;max-width:100%}
+.feature .txt{padding:24px;display:grid;gap:12px;align-content:start}
+.feature h3{font-family:var(--display);font-weight:800;font-stretch:80%;font-size:clamp(28px,3.4vw,38px);line-height:1;margin:0;text-wrap:balance}
+.feature p{margin:0;color:var(--muted);font-size:15px}
+.specs{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+.specs li{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.specs li span:last-child{font-family:var(--mono);text-align:right}
+.note{font:12px var(--mono);color:var(--muted)}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+.gallery.one{grid-template-columns:1fr}
+.gallery.one img{aspect-ratio:2.16/1}
+.gallery.pair{grid-template-columns:1fr 1fr}
+.gallery figure{margin:0;background:var(--sheet);border:1px solid var(--line);padding:10px;min-width:0}
+.gallery img{display:block;width:100%;max-width:100%;aspect-ratio:4/3;object-fit:cover}
+.subh{font:500 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--steel);margin:40px 0 0}
+
+.need{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);background:var(--sheet)}
+.need div{padding:20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;gap:6px;align-content:start}
+.need div:nth-child(3n){border-right:0}
+.need div:nth-last-child(-n+3){border-bottom:0}
+.need code{font:500 12px var(--mono);color:var(--steel)}
+.need strong{font-family:var(--display);font-stretch:88%;font-size:20px;font-weight:800;line-height:1.15}
+.need p{margin:0;font-size:14px;color:var(--muted)}
+
+ol.steps{padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
+.steps li{list-style:none;border-top:3px solid var(--green);padding-top:14px;display:grid;gap:6px;align-content:start}
+.steps li::before{counter-increment:s;content:counter(s,decimal-leading-zero);font:500 13px var(--mono);color:var(--steel)}
+.steps strong{font-size:17px}
+.steps p{margin:0;font-size:14px;color:var(--muted)}
+
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.person{border:1px solid var(--line);background:var(--sheet);padding:20px;display:grid;gap:4px}
+.person strong{font-family:var(--display);font-stretch:85%;font-size:22px;font-weight:800}
+.person>span{font:13px var(--mono);color:var(--muted)}
+.person dl{margin:12px 0 0;padding-top:12px;border-top:1px solid var(--line);display:grid;gap:2px}
+.person dt{font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--steel);margin-top:6px}
+.person dd{margin:0;font:14px var(--mono);overflow-wrap:anywhere;user-select:all}
+.person a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+.person a:hover{color:var(--green);border-color:var(--green)}
+.contact{margin-top:24px;background:var(--band);color:var(--onband);padding:24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+.contact p{margin:0;max-width:56ch}
+.contact .loc{font:500 14px var(--mono);color:var(--onband);opacity:.8}
+.biz{background:var(--band);color:var(--onband);padding:clamp(24px,5vw,56px);display:grid;gap:20px;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:24px 24px}
+.biz-head{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.biz .badge{font:500 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--onband);padding:6px 10px}
+.biz h2{font-size:clamp(40px,7vw,80px);font-stretch:72%;line-height:.95;color:var(--onband)}
+.biz-lede{font-size:clamp(17px,2vw,20px);max-width:58ch;margin:0;opacity:.92}
+.biz-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(255,255,255,.3);margin-top:8px}
+.biz-grid>div{padding:18px 18px 4px 0;display:grid;gap:6px;align-content:start;min-width:0}
+.biz-grid>div+div{padding-left:18px;border-left:1px solid rgba(255,255,255,.3)}
+.biz-grid strong{font-family:var(--display);font-stretch:85%;font-size:21px;font-weight:800;line-height:1.15}
+.biz-grid p{margin:0;font-size:14px;opacity:.85}
+.biz-cta{margin:0;font:500 14px var(--mono);border-top:1px solid rgba(255,255,255,.3);padding-top:16px}
+@media (max-width:860px){.biz-grid{grid-template-columns:1fr 1fr}.biz-grid>div:nth-child(3){padding-left:0;border-left:0}.biz-grid>div:nth-child(n+3){border-top:1px solid rgba(255,255,255,.3)}}
+@media (max-width:520px){.biz-grid{grid-template-columns:1fr}.biz-grid>div,.biz-grid>div+div{padding-left:0;border-left:0}.biz-grid>div+div{border-top:1px solid rgba(255,255,255,.3)}}
+footer{padding-block:28px;font:12px var(--mono);color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;gap:28px;padding-block:32px 24px}
+  .three,.team{grid-template-columns:1fr}
+  .feature{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr 1fr}
+    .need{grid-template-columns:1fr 1fr}
+  .need div{border-right:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important}
+  .need div:nth-child(2n){border-right:0!important}
+  ol.steps{grid-template-columns:1fr 1fr}
+}
+@media (max-width:520px){
+  .need,.gallery{grid-template-columns:1fr}
+  .need div{border-right:0!important}ol.steps{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <div class="brand"><b aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M3 12 12 4l9 8"/><path d="M6 10v10h12V10"/><path d="M12 19c0-4 2.5-6.5 5-7-0.3 3.6-2.4 6.3-5 7Zm0 0c-1.6-1.2-2.6-3-2.6-5"/></svg></b><span>CONSTRUCTORA ECOLOGÍAS</span></div>
+  <div class="langs" role="group" aria-label="Idioma / Language / 语言">
+    <button type="button" id="l-es" data-l="es" aria-pressed="true">ES</button>
+    <button type="button" id="l-en" data-l="en" aria-pressed="false">EN</button>
+    <button type="button" id="l-zh" data-l="zh" aria-pressed="false">中文</button>
+  </div>
+</div></header>
+
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <div class="eyebrow" data-i="eyebrow">Constructora e inversionista · Bogotá, Colombia</div>
+      <h1 data-i="h1">Construimos <em>Colombia</em>.</h1>
+      <p class="lede" data-i="lede">Constructora Ecologías es una constructora e inversionista colombiana con sede en Bogotá. Desarrollamos proyectos industriales, residenciales y turísticos en el país y trabajamos directamente con fabricantes internacionales para abastecer nuestras obras.</p>
+      <dl class="stats">
+        <div><dt data-i="st1">Parque industrial</dt><dd>20.000 <small>m²</small></dd></div>
+        <div><dt data-i="st2">Parque acuático</dt><dd>35.000 <small>m²</small></dd></div>
+        <div><dt data-i="st3">Casa Útica</dt><dd>211.200 <small>m²</small></dd></div>
+      </dl>
+    </div>
+    <figure class="drawing">
+      <img class="heroimg" src="img/utica-piscina.jpg" alt="Render de Casa Útica: terraza con pérgola metálica y piscina">
+      <figcaption><span data-i="figA">Casa Útica · Útica, Cundinamarca</span><span data-i="figB">Render de proyecto</span></figcaption>
+    </figure>
+  </section>
+
+  <section class="sheet" id="nosotros">
+    <div class="sh"><span class="no">CE-02</span><h2 data-i="h2a">Quiénes somos</h2></div>
+    <p class="intro" data-i="intro">Somos una empresa colombiana que construye e invierte. Manejamos los proyectos de principio a fin y compramos materiales directamente a fábrica para entregar obras de calidad a buen costo.</p>
+    <div class="three">
+      <article class="card"><span class="tag" data-i="t1">Obra</span><h3 data-i="c1h">Construcción</h3><p data-i="c1p">Proyectos residenciales e industriales en Colombia, desde la estructura hasta los acabados.</p></article>
+      <article class="card"><span class="tag" data-i="t2">Capital</span><h3 data-i="c2h">Inversión</h3><p data-i="c2p">Invertimos en nuestros propios desarrollos, lo que nos da compras recurrentes y decisiones rápidas.</p></article>
+      <article class="card"><span class="tag" data-i="t3">Importación</span><h3 data-i="c3h">Compra directa</h3><p data-i="c3p">Importamos desde China con agente de carga propio y experiencia en contenedores y aduana.</p></article>
+    </div>
+  </section>
+
+  <section class="sheet" id="negocios">
+    <div class="biz">
+      <div class="biz-head">
+        <span class="no" style="color:var(--onband);opacity:.75">CE-03</span>
+        <span class="badge" data-i="oB">+ Nuevos negocios</span>
+      </div>
+      <h2 data-i="oH">Abiertos a nuevos negocios</h2>
+      <p class="biz-lede" data-i="oP">Además de construcción, buscamos productos de cualquier sector para importar y comercializar en Colombia. Si fabrica algo con potencial en el mercado latinoamericano, queremos conocerlo, aunque no tenga relación con lo que hacemos hoy.</p>
+      <div class="biz-grid">
+        <div><strong data-i="b1">Productos nuevos</strong><p data-i="b1p">Categorías que todavía no existen en nuestro portafolio. Evaluamos cada propuesta.</p></div>
+        <div><strong data-i="b2">Distribución en Colombia</strong><p data-i="b2p">Buscamos relaciones de largo plazo para llevar productos al mercado colombiano.</p></div>
+        <div><strong data-i="b3">Capital propio</strong><p data-i="b3p">Somos inversionistas: tomamos decisiones rápidas y compramos directo a fábrica.</p></div>
+        <div><strong data-i="b4">Importación resuelta</strong><p data-i="b4p">Compramos FOB y nuestro agente de carga maneja contenedor y aduana.</p></div>
+      </div>
+      <p class="biz-cta" data-i="bCta">Escríbanos y cuéntenos de su producto. Los contactos están al final de esta página.</p>
+    </div>
+  </section>
+
+  <section class="sheet" id="proyectos">
+    <div class="sh"><span class="no">CE-04</span><h2 data-i="h2p">Proyectos</h2></div>
+    <p class="subh" style="margin-top:0;margin-bottom:12px" data-i="subInd">Parque industrial · 20.000 m² · Entregado</p>
+    <article class="feature">
+      <img src="img/ind-fachada.jpg" alt="Bodega terminada con fachada en panel metálico blanco y volumen de oficinas en vidrio" loading="lazy">
+      <div class="txt">
+        <span class="tag" data-i="iTag">Logística · Colombia</span>
+        <h3 data-i="iH">Parque industrial y logístico</h3>
+        <p data-i="iP">Nave en estructura metálica con fachada en panel y vidrio, mezzanine de oficinas integrado y muelles de cargue. Hoy está en operación.</p>
+        <ul class="specs">
+          <li><span data-i="i0">Área construida</span><span>20.000 m²</span></li>
+          <li><span data-i="i1">Estructura</span><span data-i="i1v">Pórticos en acero</span></li>
+          <li><span data-i="i2">Fachada</span><span data-i="i2v">Panel metálico + vidrio</span></li>
+          <li><span data-i="i3">Cubierta</span><span data-i="i3v">Con iluminación cenital</span></li>
+          <li><span data-i="i4">Oficinas</span><span data-i="i4v">Mezzanine en mampostería</span></li>
+          <li><span data-i="i5">Cargue</span><span data-i="i5v">Muelles con niveladores</span></li>
+        </ul>
+      </div>
+    </article>
+    <div class="gallery">
+      <figure><img src="img/ind-aerea.jpg" alt="Vista aérea de la bodega y el parque industrial" loading="lazy"><figcaption><span data-i="gI1">Vista aérea</span><span data-i="ext">Exterior</span></figcaption></figure>
+      <figure><img src="img/ind-frontal.jpg" alt="Fachada frontal con patio de maniobras" loading="lazy"><figcaption><span data-i="gI2">Fachada y patio de maniobras</span><span data-i="ext">Exterior</span></figcaption></figure>
+      <figure><img src="img/ind-nave.jpg" alt="Interior de la nave en operación" loading="lazy"><figcaption><span data-i="gI3">Nave en operación</span><span data-i="int">Interior</span></figcaption></figure>
+      <figure><img src="img/ind-mezzanine-vista.jpg" alt="Vista de la nave desde el mezzanine" loading="lazy"><figcaption><span data-i="gI4">Vista desde el mezzanine</span><span data-i="int">Interior</span></figcaption></figure>
+      <figure><img src="img/ind-oficinas.jpg" alt="Mezzanine de oficinas con jardineras" loading="lazy"><figcaption><span data-i="gI5">Mezzanine de oficinas</span><span data-i="int">Interior</span></figcaption></figure>
+      <figure><img src="img/ind-muelles.jpg" alt="Muelles de cargue bajo el mezzanine" loading="lazy"><figcaption><span data-i="gI6">Muelles de cargue</span><span data-i="int">Interior</span></figcaption></figure>
+    </div>
+    <div class="gallery one">
+      <figure><img src="img/ind-centro.jpg" alt="Centro logístico con cubierta extensa y muelles" loading="lazy"><figcaption><span data-i="gD">Centro logístico</span><span>Colombia</span></figcaption></figure>
+    </div>
+    <p class="subh" style="margin-bottom:12px" data-i="subRes">Vivienda campestre · 211.200 m²</p>
+    <article class="feature">
+      <img src="img/utica-acceso.jpg" alt="Render del acceso de Casa Útica con pérgola metálica y jardín" loading="lazy">
+      <div class="txt">
+        <span class="tag" data-i="uTag">Residencial · Útica, Cundinamarca</span>
+        <h3 data-i="uH">Casa Útica</h3>
+        <p data-i="uP">Casa campestre de un piso, abierta al jardín, con espacios sociales integrados y zona de piscina.</p>
+        <ul class="specs">
+          <li><span data-i="u0">Lote</span><span>211.200 m²</span></li>
+          <li><span data-i="u1">Pérgolas</span><span data-i="u1v">Estructura en acero</span></li>
+          <li><span data-i="u2">Fachada</span><span data-i="u2v">Celosías en madera, muros en piedra</span></li>
+          <li><span data-i="u3">Ventanería</span><span data-i="u3v">Ventanales de piso a techo</span></li>
+          <li><span data-i="u4">Exterior</span><span data-i="u4v">Piscina con jacuzzi y terraza</span></li>
+        </ul>
+        <span class="note" data-i="dNote">Imágenes: renders de proyecto</span>
+      </div>
+    </article>
+    <div class="gallery">
+      <figure><img src="img/utica-entrada.jpg" alt="Entrada principal" loading="lazy"><figcaption><span data-i="gU1">Entrada principal</span><span data-i="ext">Exterior</span></figcaption></figure>
+      <figure><img src="img/utica-social.jpg" alt="Sala y comedor abiertos a la piscina" loading="lazy"><figcaption><span data-i="gU2">Zona social</span><span data-i="int">Interior</span></figcaption></figure>
+      <figure><img src="img/utica-cocina.jpg" alt="Cocina abierta con comedor" loading="lazy"><figcaption><span data-i="gU3">Cocina y comedor</span><span data-i="int">Interior</span></figcaption></figure>
+      <figure><img src="img/utica-sala.jpg" alt="Sala con mueble en madera" loading="lazy"><figcaption><span data-i="gU4">Sala</span><span data-i="int">Interior</span></figcaption></figure>
+      <figure><img src="img/utica-habitacion.jpg" alt="Habitación principal con vista al jardín" loading="lazy"><figcaption><span data-i="gU5">Habitación principal</span><span data-i="int">Interior</span></figcaption></figure>
+      <figure><img src="img/utica-terraza.jpg" alt="Terraza con pérgola junto a la piscina" loading="lazy"><figcaption><span data-i="gU6">Terraza y piscina</span><span data-i="ext">Exterior</span></figcaption></figure>
+    </div>
+    <p class="subh" style="margin-bottom:12px" data-i="subTur">Desarrollo turístico · 35.000 m² · En diseño</p>
+    <article class="feature">
+      <img src="img/doradal-aerea.jpg" alt="Render aéreo del proyecto Doradal: cabañas, lagos y parque acuático" loading="lazy">
+      <div class="txt">
+        <span class="tag" data-i="dTag">En desarrollo · Magdalena Medio</span>
+        <h3 data-i="dH">Parque Acuático, Marina y Eco-Hotel Doradal</h3>
+        <p data-i="dP">Desarrollo turístico sobre la Ruta del Sol y los ríos Magdalena y Negro, con energía renovable y enfoque en ecoturismo.</p>
+        <ul class="specs">
+          <li><span data-i="d0">Parque acuático</span><span>35.000 m²</span></li>
+          <li><span data-i="d1">Cabañas con piscina</span><span>34</span></li>
+          <li><span data-i="d2">Lagos naturales</span><span>6</span></li>
+          <li><span data-i="d3">Lago principal</span><span>2–3 ha</span></li>
+          <li><span data-i="d4">Paneles solares</span><span>600</span></li>
+          <li><span data-i="d5">Puerto y marina</span><span data-i="yes">Sí</span></li>
+        </ul>
+        <span class="note" data-i="dNote2">Imágenes: renders conceptuales</span>
+      </div>
+    </article>
+    <div class="gallery pair">
+      <figure><img src="img/doradal-piscina.jpg" alt="Render de piscina y zona social" loading="lazy"><figcaption><span data-i="gA">Piscina y sede social</span><span>Doradal</span></figcaption></figure>
+      <figure><img src="img/doradal-parque.jpg" alt="Render del parque acuático y muelle" loading="lazy"><figcaption><span data-i="gB">Parque acuático</span><span>Doradal</span></figcaption></figure>
+    </div>
+  </section>
+
+  <section class="sheet" id="buscamos">
+    <div class="sh"><span class="no">CE-05</span><h2 data-i="h2b">Qué compramos</h2></div>
+    <div class="need">
+      <div><code>01</code><strong data-i="n1">Estructura metálica</strong><p data-i="n1p">Perfiles, vigas, columnas, correas y estructuras prefabricadas.</p></div>
+      <div><code>02</code><strong data-i="n2">Cubiertas y paneles</strong><p data-i="n2p">Teja metálica, panel sándwich, policarbonato y aislamiento.</p></div>
+      <div><code>03</code><strong data-i="n3">Ventanería y vidrio</strong><p data-i="n3p">Ventanas y puertas en aluminio, vidrio templado y laminado.</p></div>
+      <div><code>04</code><strong data-i="n4">Puertas y cerramientos</strong><p data-i="n4p">Puertas interiores, enrollables, seccionales y de seguridad.</p></div>
+      <div><code>05</code><strong data-i="n5">Acabados</strong><p data-i="n5p">Pisos, cerámica, sanitarios, griferías y muebles de cocina.</p></div>
+      <div><code>06</code><strong data-i="n6">Energía solar y eléctrico</strong><p data-i="n6p">Paneles solares, inversores, luminarias LED y cableado.</p></div>
+    </div>
+  </section>
+
+  <section class="sheet" id="proceso">
+    <div class="sh"><span class="no">CE-06</span><h2 data-i="h2c">Cómo compramos</h2></div>
+    <ol class="steps">
+      <li><strong data-i="p1">Cotización</strong><p data-i="p1p">Fichas técnicas, precios y tiempos de producción.</p></li>
+      <li><strong data-i="p2">Muestras</strong><p data-i="p2p">Validamos calidad y especificaciones antes de ordenar.</p></li>
+      <li><strong data-i="p3">Orden FOB</strong><p data-i="p3p">Compramos en términos FOB, puerto de China.</p></li>
+      <li><strong data-i="p4">Logística</strong><p data-i="p4p">Nuestro agente de carga gestiona contenedor y aduana hacia Colombia.</p></li>
+    </ol>
+  </section>
+
+  <section class="sheet" id="equipo">
+    <div class="sh"><span class="no">CE-07</span><h2 data-i="h2d">Equipo</h2></div>
+    <div class="team">
+      <div class="person"><strong>Camilo Andrés Rodríguez</strong><span>CEO · Constructora Ecologías</span>
+        <dl><dt data-i="lEmail">Email · 邮箱</dt><dd><a href="mailto:crodriguezcubillos@outlook.com">crodriguezcubillos@outlook.com</a></dd>
+        <dt data-i="lWa">WhatsApp · 电话</dt><dd><a href="https://wa.me/573108708541" target="_blank" rel="noopener">+57 310 870 8541</a></dd></dl></div>
+      <div class="person"><strong>Jorge Luis Rodríguez</strong><span>CEO · Constructora Ecologías</span>
+        <dl><dt data-i="lEmail">Email · 邮箱</dt><dd><a href="mailto:jrodriguezcubillos@gmail.com">jrodriguezcubillos@gmail.com</a></dd>
+        <dt data-i="lWa">WhatsApp · 电话</dt><dd><a href="https://wa.me/573204956692" target="_blank" rel="noopener">+57 320 495 6692</a></dd></dl></div>
+      <div class="person"><strong>Daniel Salguero</strong><span>CEO · Constructora Ecologías</span>
+        <dl><dt data-i="lEmail">Email · 邮箱</dt><dd><a href="mailto:daniel.salguero1@gmail.com">daniel.salguero1@gmail.com</a></dd>
+        <dt data-i="lWa">WhatsApp · 电话</dt><dd><a href="https://wa.me/573104596371" target="_blank" rel="noopener">+57 310 459 6371</a></dd></dl></div>
+    </div>
+    <div class="contact">
+      <p data-i="ct">¿Fabrica alguno de estos productos? Escríbanos por correo o WhatsApp. Buscamos proveedores para relaciones de largo plazo.</p>
+      <span class="loc">Bogotá · Colombia</span>
+    </div>
+  </section>
+</main>
+<footer class="wrap"><span>© 2026 Constructora Ecologías</span><span data-i="foot">Constructora e inversionista colombiana</span></footer>
+
+<script>
+const T={
+en:{eyebrow:"Builder & investor · Bogotá, Colombia",h1:"Building <em>Colombia</em>.",lede:"Constructora Ecologías is a Colombian construction and investment company based in Bogotá. We develop industrial, residential and tourism projects across the country and work directly with international manufacturers to supply our sites.",st1:"Industrial park",st2:"Water park",st3:"Casa Útica",svgA:"PROJECTS · BOGOTÁ, COLOMBIA",svgB:"LEVELS",figA:"Casa Útica · Útica, Cundinamarca",figB:"Project render",h2a:"Who we are",intro:"We are a Colombian company that builds and invests. We run projects from start to finish and buy materials directly from factories to deliver quality work at a good cost.",t1:"Works",c1h:"Construction",c1p:"Residential and industrial projects in Colombia, from structure to finishes.",t2:"Capital",c2h:"Investment",c2p:"We invest in our own developments, which means recurring orders and fast decisions.",t3:"Import",c3h:"Direct sourcing",c3p:"We import from China with our own freight forwarder and experience in containers and customs.",h2p:"Projects",dTag:"In development · Magdalena Medio",dH:"Doradal Water Park, Marina & Eco-Hotel",dP:"A tourism development on the Ruta del Sol highway and the Magdalena and Negro rivers, with renewable energy and an ecotourism focus.",d1:"Cabins with pool",d2:"Natural lakes",d3:"Main lake",d4:"Solar panels",d5:"Port and marina",yes:"Yes",dNote:"Images: project renders",dNote2:"Images: concept renders",subRes:"Country housing · 211,200 m²",u0:"Plot",uTag:"Residential · Útica, Cundinamarca",uH:"Casa Útica",uP:"Single-storey country house open to the garden, with integrated social areas and a pool zone.",u1:"Pergolas",u1v:"Steel structure",u2:"Façade",u2v:"Wood louvers, stone walls",u3:"Windows",u3v:"Floor-to-ceiling glazing",u4:"Outdoor",u4v:"Pool with jacuzzi and terrace",gU1:"Main entrance",gU2:"Living area",gU3:"Kitchen and dining",gU4:"Living room",gU5:"Master bedroom",gU6:"Terrace and pool",gA:"Pool and clubhouse",gB:"Water park",gC:"Cabin elevations",subInd:"Industrial park · 20,000 m² · Delivered",i0:"Built area",subTur:"Tourism development · 35,000 m² · In design",d0:"Water park",iTag:"Logistics · Colombia",iH:"Industrial and logistics park",iP:"Steel-frame building with panel and glass façade, built-in office mezzanine and loading docks. Now in operation.",i1:"Structure",i1v:"Steel portal frames",i2:"Façade",i2v:"Metal panel + glass",i3:"Roof",i3v:"With skylight strips",i4:"Offices",i4v:"Masonry mezzanine",i5:"Loading",i5v:"Docks with levelers",gI1:"Aerial view",gI2:"Façade and yard",gI3:"Warehouse in operation",gI4:"View from the mezzanine",gI5:"Office mezzanine",gI6:"Loading docks",ext:"Exterior",int:"Interior",gD:"Logistics center",gE:"General structural plan",gEb:"Isometric",h2b:"What we buy",n1:"Structural steel",n1p:"Sections, beams, columns, purlins and prefab structures.",n2:"Roofing and panels",n2p:"Metal roofing, sandwich panel, polycarbonate and insulation.",n3:"Windows and glass",n3p:"Aluminum windows and doors, tempered and laminated glass.",n4:"Doors and enclosures",n4p:"Interior, roller, sectional and security doors.",n5:"Finishes",n5p:"Flooring, tile, sanitary ware, faucets and kitchen cabinets.",n6:"Solar and electrical",n6p:"Solar panels, inverters, LED fixtures and wiring.",oB:"+ New business",oH:"Open to new business",oP:"Beyond construction, we are looking for products from any industry to import and sell in Colombia. If you make something with potential in the Latin American market, we want to see it, even if it has nothing to do with what we do today.",b1:"New products",b1p:"Categories we do not carry yet. We review every proposal.",b2:"Distribution in Colombia",b2p:"We want long-term partners to bring products to the Colombian market.",b3:"Our own capital",b3p:"We are investors: we decide fast and buy directly from the factory.",b4:"Import handled",b4p:"We buy FOB and our freight forwarder handles the container and customs.",bCta:"Write to us and tell us about your product. Our contacts are at the end of this page.",h2c:"How we buy",p1:"Quotation",p1p:"Data sheets, prices and production lead times.",p2:"Samples",p2p:"We check quality and specs before ordering.",p3:"FOB order",p3p:"We buy on FOB terms, China port.",p4:"Logistics",p4p:"Our freight forwarder handles the container and customs to Colombia.",h2d:"Team",ct:"Do you make any of these products? Email us or message us on WhatsApp. We want suppliers for long-term relationships.",foot:"Colombian builder & investor"},
+zh:{eyebrow:"建筑商与投资方 · 哥伦比亚 波哥大",h1:"建设<em>哥伦比亚</em>。",lede:"Constructora Ecologías 是一家总部位于波哥大的哥伦比亚建筑与投资公司。我们在哥伦比亚开发工业、住宅及旅游项目，并直接与国际厂家合作，为工程供应材料。",st1:"工业园区",st2:"水上乐园",st3:"Útica 住宅",svgA:"项目 · 哥伦比亚 波哥大",svgB:"楼层",figA:"Útica 住宅 · 昆迪纳马卡省",figB:"项目效果图",h2a:"关于我们",intro:"我们是一家集建设与投资于一体的哥伦比亚公司。项目全程自主管理，直接向工厂采购材料，以合理成本交付高品质工程。",t1:"工程",c1h:"建筑施工",c1p:"哥伦比亚的住宅和工业项目，从结构到装修。",t2:"资本",c2h:"投资",c2p:"我们投资自己的开发项目，因此采购持续稳定、决策迅速。",t3:"进口",c3h:"工厂直采",c3p:"我们从中国进口，拥有自己的货代，熟悉集装箱运输与清关。",h2p:"项目案例",dTag:"开发中 · 马格达莱纳河中游",dH:"Doradal 水上乐园、码头与生态酒店",dP:"位于太阳大道（Ruta del Sol）及马格达莱纳河与内格罗河沿岸的旅游开发项目，采用可再生能源，主打生态旅游。",d1:"带泳池小屋",d2:"天然湖泊",d3:"主湖面积",d4:"太阳能板",d5:"港口与码头",yes:"有",dNote:"图片：项目效果图",dNote2:"图片：概念效果图",subRes:"乡村住宅 · 211,200 平方米",u0:"地块",uTag:"住宅 · 昆迪纳马卡省 Útica",uH:"Útica 住宅",uP:"单层乡村别墅，面向花园，社交空间一体化，并设有泳池区。",u1:"廊架",u1v:"钢结构",u2:"立面",u2v:"木百叶、石材墙面",u3:"门窗",u3v:"落地玻璃窗",u4:"户外",u4v:"带按摩池的泳池及露台",gU1:"主入口",gU2:"客厅区域",gU3:"厨房与餐厅",gU4:"客厅",gU5:"主卧",gU6:"露台与泳池",gA:"泳池与会所",gB:"水上乐园",gC:"小屋立面图",subInd:"工业园区 · 20,000 平方米 · 已交付",i0:"建筑面积",subTur:"旅游开发 · 35,000 平方米 · 设计中",d0:"水上乐园",iTag:"物流 · 哥伦比亚",iH:"工业物流园区",iP:"钢结构厂房，金属板与玻璃幕墙立面，内置夹层办公区及装卸货平台。现已投入使用。",i1:"结构",i1v:"钢结构门式刚架",i2:"立面",i2v:"金属板 + 玻璃",i3:"屋面",i3v:"带采光带",i4:"办公区",i4v:"砌体夹层",i5:"装卸",i5v:"带调节板的装卸平台",gI1:"航拍",gI2:"立面与场地",gI3:"运营中的仓库",gI4:"夹层视角",gI5:"夹层办公区",gI6:"装卸平台",ext:"外景",int:"室内",gD:"物流中心",gE:"钢结构总图",gEb:"轴测图",h2b:"我们采购的产品",n1:"钢结构",n1p:"型钢、梁、柱、檩条及预制钢结构。",n2:"屋面与墙板",n2p:"金属屋面板、夹芯板、阳光板及保温材料。",n3:"门窗与玻璃",n3p:"铝合金门窗、钢化及夹胶玻璃。",n4:"门类与围护",n4p:"室内门、卷帘门、分节门及防盗门。",n5:"装修材料",n5p:"地板、瓷砖、卫浴洁具、龙头及橱柜。",n6:"太阳能与电气",n6p:"太阳能板、逆变器、LED 灯具及电线电缆。",oB:"+ 新业务",oH:"欢迎新的合作机会",oP:"除建筑外，我们寻找任何行业的产品，进口并在哥伦比亚销售。如果您的产品在拉丁美洲市场有潜力，即使与我们目前的业务无关，我们也很想了解。",b1:"新产品",b1p:"我们目前尚未经营的品类，每个方案都会认真评估。",b2:"哥伦比亚分销",b2p:"寻求长期合作伙伴，把产品带入哥伦比亚市场。",b3:"自有资金",b3p:"我们是投资方：决策快速，直接向工厂采购。",b4:"进口无忧",b4p:"我们按 FOB 采购，货代负责集装箱运输与清关。",bCta:"欢迎与我们联系，介绍您的产品。联系方式在本页底部。",h2c:"采购流程",p1:"报价",p1p:"技术参数、价格和生产周期。",p2:"样品",p2p:"下单前确认质量和规格。",p3:"FOB 订单",p3p:"按 FOB 中国港口条款采购。",p4:"物流",p4p:"我们的货代负责集装箱运输及至哥伦比亚的清关。",h2d:"团队",ct:"您生产以上产品吗？欢迎通过邮箱或 WhatsApp 联系我们。我们寻求长期合作的供应商。",foot:"哥伦比亚建筑商与投资方"}
+};
+const ES={};document.querySelectorAll("[data-i]").forEach(e=>ES[e.dataset.i]=e.innerHTML);T.es=ES;
+function setLang(l){
+  const d=T[l]||ES;
+  document.querySelectorAll("[data-i]").forEach(e=>{if(d[e.dataset.i])e.innerHTML=d[e.dataset.i]});
+  document.documentElement.lang=l==="zh"?"zh-CN":l;
+  document.querySelectorAll(".langs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.l===l));
+  try{localStorage.setItem("celang",l)}catch(e){}
+}
+document.querySelectorAll(".langs button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.l)));
+let saved=null;try{saved=localStorage.getItem("celang")}catch(e){}
+if(saved&&saved!=="es")setLang(saved);
+</script>
+</body>
+</html>
